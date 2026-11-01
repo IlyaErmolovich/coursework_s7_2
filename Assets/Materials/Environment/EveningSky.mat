@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EveningSky
-  m_Shader: {fileID: 4800000, guid: 51cdad67ccfb25d2e88a38c9e9a0d65b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 13c02b14c4d048fa9653293d54f6e0e1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,21 +22,22 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _HazeHeight: 0.25
-    - _HazeIrregularity: 0.3
-    - _HazeOpacity: 0.065
-    - _HazeSoftness: 0.45
-    - _HazeSpacing: 1.2
-    - _HorizonHeight: -1
-    - _MiddleHeight: 2.5
-    - _TopHeight: 6
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    - _ZWrite: 0
     m_Colors:
-    - _HazeColor: {r: 0.79, g: 0.77, b: 0.83, a: 1}
-    - _HorizonColor: {r: 0.72, g: 0.7, b: 0.76, a: 1}
-    - _MiddleColor: {r: 0.55, g: 0.59, b: 0.67, a: 1}
-    - _TopColor: {r: 0.34, g: 0.4, b: 0.52, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

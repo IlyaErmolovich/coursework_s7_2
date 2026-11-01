@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Forest
-  m_Shader: {fileID: 4800000, guid: 144d5775cbe56296a92a0743676c4ff8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 13c02b14c4d048fa9653293d54f6e0e1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -35,13 +35,9 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _EnableExternalAlpha: 0
-    - _LuminanceMax: 0.32
-    - _LuminanceMin: 0.055
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _LightColor: {r: 0.53, g: 0.56, b: 0.65, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.23, g: 0.27, b: 0.35, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

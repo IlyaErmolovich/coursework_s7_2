@@ -244,6 +244,120 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274310295}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &543053590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543053591}
+  - component: {fileID: 543053594}
+  - component: {fileID: 543053593}
+  - component: {fileID: 543053592}
+  m_Layer: 0
+  m_Name: Static Haze - vertex transparency
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &543053591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543053590}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 915241501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &543053592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543053590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e072d01ef740274bf4044a997e9753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinterDuel.Environment.VertexHaze
+  width: 80
+  horizontalSegments: 128
+  edgeSegments: 20
+  hazeColor: {r: 0.79, g: 0.77, b: 0.83, a: 1}
+  opacity: 0.065
+  height: 0.25
+  edgeSoftness: 0.45
+  bandSpacing: 1.2
+  edgeIrregularity: 0.3
+  material: {fileID: 2100000, guid: beab249d78432eb3c9e247a01d7555ca, type: 2}
+  sortingOrder: -90
+--- !u!23 &543053593
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543053590}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: beab249d78432eb3c9e247a01d7555ca, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -90
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &543053594
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543053590}
+  m_Mesh: {fileID: 0}
 --- !u!1 &568617715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5206,6 +5320,7 @@ GameObject:
   - component: {fileID: 915241501}
   - component: {fileID: 915241503}
   - component: {fileID: 915241502}
+  - component: {fileID: 915241504}
   m_Layer: 0
   m_Name: 00 - Evening Sky and Static Haze
   m_TagString: Untagged
@@ -5223,9 +5338,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 80, y: 30, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 543053591}
   m_Father: {fileID: 254680745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &915241502
@@ -5284,7 +5400,31 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915241500}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
+--- !u!114 &915241504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915241500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617b035602c2d3699b465bd71fc9f4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinterDuel.Environment.VertexGradientSky
+  width: 80
+  bottomHeight: -15
+  ceilingHeight: 15
+  verticalSegments: 128
+  upperColor: {r: 0.34, g: 0.4, b: 0.52, a: 1}
+  middleColor: {r: 0.55, g: 0.59, b: 0.67, a: 1}
+  horizonColor: {r: 0.72, g: 0.7, b: 0.76, a: 1}
+  horizonHeight: -1
+  middleHeight: 2.5
+  upperHeight: 6
+  material: {fileID: 2100000, guid: beab249d78432eb3c9e247a01d7555ca, type: 2}
+  sortingOrder: -100
 --- !u!1 &1123773364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5772,7 +5912,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: c6ca402c9d66961d7870134c8c465780, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da694701e7b51dc3b9d1d94cae73f91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5863,7 +6003,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: c6ca402c9d66961d7870134c8c465780, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da694701e7b51dc3b9d1d94cae73f91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5954,7 +6094,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: c6ca402c9d66961d7870134c8c465780, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7da694701e7b51dc3b9d1d94cae73f91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
