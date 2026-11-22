@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0052b665626da776ab74526b61cbd910, type: 3}
+  m_Name: LocalDuelBalance
+  m_EditorClassIdentifier: Assembly-CSharp::WinterDuel.Gameplay.DuelSettings
+  maxHealth: 100
+  maxWarmth: 50
+  snowDamage: 20
+  iceDamage: 35
+  iceCost: 15
+  warmthRecovery: 15
+  minimumDrag: 28
+  maximumDrag: 400
+  minimumSpeed: 6
+  maximumSpeed: 24
+  gravity: 9.81
+  maximumWind: 1.8
+  windSeed: 7341
+  snowWindSpeed: 0.7
+  flightTimeout: 12
+  fieldLeft: -38
+  fieldRight: 38
+  minimumY: -12
+  maximumY: 42
+  knockback: 0.55
+  playerLeftLimit: -20
+  playerRightLimit: 28
+  minimumPlayerDistance: 4
+  resultDelay: 0.8
+  previewDuration: 0.42
+  previewDistance: 5.5
+  cameraLeft: -24
+  cameraRight: 24
+  cameraTop: 30
+  cameraSmoothTime: 0.32

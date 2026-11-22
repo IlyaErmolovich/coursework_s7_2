@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 namespace WinterDuel.UI
 {
-    /// <summary>Visual selection only. No gameplay action is performed.</summary>
+    /// <summary>Existing button selection, delegated to the local match when connected.</summary>
     [ExecuteAlways, DisallowMultipleComponent]
     public sealed class HudActionSelection : MonoBehaviour
     {
         public enum Action { Snowball, IceSnowball, RestoreWarmth }
 
+        public WinterDuel.Gameplay.DuelMatchController match;
         public Button snowballButton;
         public Button iceButton;
         public Button warmthButton;
@@ -35,9 +36,9 @@ namespace WinterDuel.UI
         private void OnDestroy() => UnityEditor.EditorApplication.delayCall -= RefreshAfterValidation;
 #endif
 
-        public void SelectSnowball() => Select(Action.Snowball);
-        public void SelectIce() => Select(Action.IceSnowball);
-        public void SelectWarmth() => Select(Action.RestoreWarmth);
+        public void SelectSnowball() { if (Application.isPlaying && match != null) match.ChooseSnowball(); else Select(Action.Snowball); }
+        public void SelectIce() { if (Application.isPlaying && match != null) match.PrepareOrSelectIce(); else Select(Action.IceSnowball); }
+        public void SelectWarmth() { if (Application.isPlaying && match != null) match.RecoverWarmth(); else Select(Action.RestoreWarmth); }
 
         private void Select(Action action)
         {
