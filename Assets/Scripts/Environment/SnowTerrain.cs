@@ -20,6 +20,9 @@ namespace WinterDuel.Environment
         public sealed class FixedFieldProfile
         {
             public bool enabled;
+            public bool naturalTerrain;
+            public float terrainRelief = 1.05f, minimumFeatureWidth = 3.5f, maximumFeatureWidth = 8.5f;
+            public float rightPadHalfWidth = 5.5f;
             public float leftX, rightX, leftHeight, rightHeight, padHalfWidth, padBlend;
             public DuelHill[] hills = new DuelHill[0];
         }
@@ -92,6 +95,7 @@ namespace WinterDuel.Environment
         private float EvaluateFixedField(float x)
         {
             var p = fieldProfile;
+            if (p.naturalTerrain) return EvaluateNaturalField(x);
             float leftEdge = p.leftX + p.padHalfWidth;
             float rightEdge = p.rightX - p.padHalfWidth;
             float baseline = Mathf.Lerp(p.leftHeight, p.rightHeight,
@@ -112,6 +116,43 @@ namespace WinterDuel.Environment
                 hills += hill.height * dome * dome * dome * (1 + skew * u);
             }
             return baseline + mask * hills;
+        }
+
+        private float SeedValue(int index, uint salt)
+        {
+            unchecked
+            {
+                uint h = (uint)seed ^ ((uint)index * 747796405u + salt);
+                h = (h ^ (h >> 16)) * 2246822519u;
+                h = (h ^ (h >> 13)) * 3266489917u;
+                return (h ^ (h >> 16)) / (float)uint.MaxValue;
+            }
+        }
+
+        private float EvaluateNaturalField(float x)
+        {
+            var p = fieldProfile;
+            float from = -width * 0.5f;
+            float a = (SeedValue(0, 17) * 2 - 1) * p.terrainRelief;
+            float noise = a;
+            // Irregular knot spacing and independent heights; no repeating sinusoid.
+            for (int i = 1; i < 512; i++)
+            {
+                float to = from + Mathf.Lerp(Mathf.Max(1, p.minimumFeatureWidth),
+                    Mathf.Max(p.minimumFeatureWidth, p.maximumFeatureWidth), SeedValue(i, 91));
+                float b = (SeedValue(i, 17) * 2 - 1) * p.terrainRelief;
+                if (x <= to) { noise = Mathf.Lerp(a, b, SmoothTransition(Mathf.InverseLerp(from, to, x))); break; }
+                from = to; a = b;
+            }
+            float baseline = Mathf.Lerp(p.leftHeight, p.rightHeight,
+                SmoothTransition(Mathf.InverseLerp(p.leftX, p.rightX, x)));
+            float blend = Mathf.Max(.1f, p.padBlend);
+            float leftMask = SmoothTransition((Mathf.Abs(x-p.leftX)-p.padHalfWidth)/blend);
+            float rightMask = SmoothTransition((Mathf.Abs(x-p.rightX)-p.rightPadHalfWidth)/blend);
+            // Blend to each safe platform height, with zero slope at its edges.
+            float result = baseline + noise;
+            result = Mathf.Lerp(p.leftHeight, result, leftMask);
+            return Mathf.Lerp(p.rightHeight, result, rightMask);
         }
 
         /// <summary>Exact point on the sampled mesh/collider, for future character placement.

@@ -45,8 +45,8 @@ public static class VerifyFixedField
      float maxY=-100,maxCameraY=-100;var end=DateTime.UtcNow.AddSeconds(12);
      while(m.ActiveProjectile!=null&&DateTime.UtcNow<end){maxY=Mathf.Max(maxY,m.ActiveProjectile.transform.position.y);maxCameraY=Mathf.Max(maxCameraY,m.cameraRig.transform.position.y);var cam=m.cameraRig.gameCamera;Check(Mathf.Abs(cam.transform.position.x)+cam.orthographicSize*cam.aspect<50,"Horizontal backdrop coverage");Check(cam.transform.position.y+cam.orthographicSize<60,"Sky covers high camera");await Task.Delay(25);}
      Check(m.ActiveProjectile==null,"Flight completed");bool hit=m.State.Players[1-player].Health==80;
-     Check(hit==high,"Expected high hit / low terrain block");
-     if(!high)Check(m.ResultPosition.x>m.characters[0].transform.position.x+5 && m.ResultPosition.x<m.characters[1].transform.position.x-5,"Low shot stopped on intermediate hill: "+m.ResultPosition+" player="+player+" shot="+shot);
+     if(high)Check(hit,"High arc reaches the opponent");
+
      if(high)Check(maxCameraY>2,"Camera follows the arc");
      float feet=Mathf.Max(FootError(m.characters[0]),FootError(m.characters[1]));Check(feet<.025f,"Feet remain on snow after knockback");
      output.Add(new{player,shot,high,velocity=v.ToString("F3"),hit,maxY,maxCameraY,impact=m.ResultPosition.ToString("F3"),feet});

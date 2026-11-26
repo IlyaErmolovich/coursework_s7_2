@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using WinterDuel.UI;
+using WinterDuel.App;
 namespace WinterDuel.Gameplay
 {
     public sealed class DuelHud : MonoBehaviour
@@ -25,12 +26,14 @@ namespace WinterDuel.Gameplay
         public void ClosePanels(){menuPanel.SetActive(false);victoryPanel.SetActive(false);aimPanel.SetActive(false);}
         public void ShowVictory()
         {
-            winnerText.text=match.State.Winner==0?"Победил\nбирюзовый игрок":"Победил\nкрасный игрок";
+            winnerText.text=match.Networked?(match.State.Winner==GameSession.Instance.LocalPlayer?"Победа!":"Поражение"):(match.State.Winner==0?"Победил\nбирюзовый игрок":"Победил\nкрасный игрок");
+            if(match.Networked && GameSession.Instance.ReplayReady)winnerText.text+="\nОжидание согласия соперника…";
+            else if(match.Networked && GameSession.Instance.PeerReplayReady)winnerText.text+="\nСоперник предлагает повторить";
             menuPanel.SetActive(false);victoryPanel.SetActive(true);
         }
         public void RefreshUI()
         {
-            if(match.State==null)return;var s=match.State;var own=s.Players[s.Active];var other=s.Players[1-s.Active];
+            if(match.State==null)return;var s=match.State;var own=s.Players[match.ViewPlayer];var other=s.Players[1-match.ViewPlayer];
             localHealth.maxValue=opponentHealth.maxValue=match.settings.maxHealth;
             localWarmth.maxValue=opponentWarmth.maxValue=match.settings.maxWarmth;
             localHealth.SetValueWithoutNotify(own.Health);localWarmth.SetValueWithoutNotify(own.Warmth);
@@ -41,12 +44,13 @@ namespace WinterDuel.Gameplay
             actions.iceButton.interactable=match.CanAct && (own.IceReady || own.Warmth>=match.settings.iceCost);
             iceStateText.text=own.IceReady?"ГОТОВ":own.Warmth<match.settings.iceCost?"НЕТ ТЕПЛА":"−"+match.settings.iceCost+" Т";
             string who=s.Active==0?"бирюзового":"красного";
+            if(match.Networked){turnText.text=!GameSession.Instance.MatchReady?"Согласование матча…":s.Phase==MatchPhase.Finished?"Бой окончен":s.Phase==MatchPhase.Ready?(s.Active==GameSession.Instance.LocalPlayer?"Ваш ход":"Ход соперника"):match.Status;return;}
             turnText.text=s.Phase==MatchPhase.Finished?"Бой окончен":s.Phase==MatchPhase.Ready?(match.CanAim?"Ход "+who+" игрока":"Переход камеры…"):match.Status;
         }
         private void LateUpdate()
         {
             if(match.State==null)return;
-            var target=match.characters[1-match.State.Active].transform.position+Vector3.up*1.5f;
+            var target=match.characters[1-match.ViewPlayer].transform.position+Vector3.up*1.5f;
             var p=match.cameraRig.gameCamera.WorldToViewportPoint(target);
             bool outside=p.x<0 || p.x>1 || p.y<0 || p.y>1;
             enemyPointer.gameObject.SetActive(outside && match.State.Phase!=MatchPhase.Finished && !match.Paused);

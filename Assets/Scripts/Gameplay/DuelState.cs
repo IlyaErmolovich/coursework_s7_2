@@ -25,6 +25,11 @@ namespace WinterDuel.Gameplay
             settings=balance;
             foreach(var p in Players){p.Health=settings.maxHealth;p.Warmth=settings.maxWarmth;}
         }
+        public void ApplySnapshot(DuelSnapshot s)
+        {
+            Active=s.active;Turn=s.turn;Winner=s.winner;Phase=s.phase;Selected=s.selected;FlyingKind=s.flyingKind;
+            for(int i=0;i<2;i++){Players[i].Health=s.health[i];Players[i].Warmth=s.warmth[i];Players[i].IceReady=s.ice[i];}
+        }
         public bool SelectSnow()
         {
             if(Phase!=MatchPhase.Ready)return false;

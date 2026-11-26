@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b6e2208e104720cd6b5e1e13245ded1f
+  - enabled: 1
     path: Assets/Scenes/WinterField.unity
     guid: 5a0a23ed9120a4674bd892f6806b382f
   m_configObjects:

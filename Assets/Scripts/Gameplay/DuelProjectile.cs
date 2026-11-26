@@ -46,6 +46,7 @@ namespace WinterDuel.Gameplay
         private void Finish(int victim)
         {
             if(resolved)return;resolved=true;
+            transform.position=body.position;
             match.FlightFinished(this,victim,velocity);
             gameObject.SetActive(false);Destroy(gameObject);
         }

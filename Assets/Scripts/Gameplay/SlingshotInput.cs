@@ -68,6 +68,7 @@ namespace WinterDuel.Gameplay
         private Vector2 Velocity(Vector2 drag,out float power)
         {
             power=Mathf.Clamp01(drag.magnitude/Mathf.Max(1,match.settings.maximumDrag));
+            if(match.Mirrored)drag.x=-drag.x;
             return drag.normalized*Mathf.Lerp(match.settings.minimumSpeed,match.settings.maximumSpeed,power);
         }
         private void DrawPreview()
