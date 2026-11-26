@@ -32,8 +32,8 @@ MonoBehaviour:
   minimumY: -12
   maximumY: 42
   knockback: 0.55
-  playerLeftLimit: -19.275
-  playerRightLimit: 27.775
+  playerLeftLimit: -18.775
+  playerRightLimit: 28.275
   minimumPlayerDistance: 4
   resultDelay: 0.8
   previewDuration: 0.42

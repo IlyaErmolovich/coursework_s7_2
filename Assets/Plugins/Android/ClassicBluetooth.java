@@ -32,7 +32,10 @@ public final class ClassicBluetooth {
     if(BluetoothDevice.ACTION_FOUND.equals(action)){
      BluetoothDevice d=intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);if(d!=null)device(d);
     }else if(BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action))emit("scanDone","Поиск завершён. Можно повторить поиск.");
-    else if(BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)&&adapter!=null&&!adapter.isEnabled())fail(generation.get(),"Bluetooth выключен. Включите его и повторите подключение.");
+    else if(BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)&&intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,BluetoothAdapter.STATE_OFF)==BluetoothAdapter.STATE_OFF){
+     if(connected||server!=null||socket!=null)fail(generation.get(),"Bluetooth выключен. Включите его и повторите подключение.");
+     else emit("error","Bluetooth выключен. Включите его и нажмите «Повторить».");
+    }
    }catch(Exception e){emit("error","Не удалось получить устройство. Проверьте разрешения Bluetooth.");}
   }
  };
@@ -53,7 +56,7 @@ public final class ClassicBluetooth {
   JSONObject o=new JSONObject();o.put("type","device");o.put("address",d.getAddress());String name=d.getName();o.put("text",name==null?"Устройство Bluetooth":name);o.put("paired",d.getBondState()==BluetoothDevice.BOND_BONDED);events.offer(o.toString());
  }
  public String state(){
-  if(adapter==null)return "unsupported";
+  if(adapter==null||!activity.getPackageManager().hasSystemFeature("android.hardware.bluetooth"))return "unsupported";
   try{return adapter.isEnabled()?"ready":"disabled";}catch(SecurityException e){return "permission";}
  }
  public void enable(){final int token=generation.get();ui.post(()->{if(token!=generation.get()||disposed)return;try{activity.startActivity(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE));}catch(Exception e){emit("error","Не удалось открыть включение Bluetooth. Включите Bluetooth в настройках.");}});}
@@ -87,7 +90,7 @@ public final class ClassicBluetooth {
   close();final int token=generation.get();
   new Thread(()->{
    try{
-    adapter.cancelDiscovery();BluetoothDevice d=adapter.getRemoteDevice(address);
+    try{adapter.cancelDiscovery();}catch(SecurityException ignored){}BluetoothDevice d=adapter.getRemoteDevice(address);
     BluetoothSocket local=d.createRfcommSocketToServiceRecord(SERVICE);
     synchronized(this){if(token!=generation.get()){local.close();return;}socket=local;}
     ui.postDelayed(()->{if(token==generation.get()&&!connected)fail(token,"Время подключения истекло. Подтвердите сопряжение на обоих телефонах и повторите.");},30000);

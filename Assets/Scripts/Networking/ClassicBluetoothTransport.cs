@@ -41,15 +41,22 @@ namespace WinterDuel.Networking
             try{EnsureNative();if(native.Call<string>("state")=="unsupported"){Raise("error","Устройство не поддерживает Bluetooth Classic. Доступна локальная игра.");return;}}catch(Exception){Raise("error","Не удалось проверить Bluetooth. Повторите попытку.");return;}
             using(var version=new AndroidJavaClass("android.os.Build$VERSION"))
             {
-                string[] permissions=version.GetStatic<int>("SDK_INT")>=31?
+                int sdk=version.GetStatic<int>("SDK_INT");
+                string[] permissions=sdk>=31?
                     new[]{"android.permission.BLUETOOTH_SCAN","android.permission.BLUETOOTH_CONNECT","android.permission.BLUETOOTH_ADVERTISE"}:
                     host?new string[0]:new[]{Permission.FineLocation};
                 Action go=()=>{if(token==attempt)StartAvailable(host);};
                 if(Array.TrueForAll(permissions,Permission.HasUserAuthorizedPermission)){go();return;}
                 var callbacks=new PermissionCallbacks();bool finished=false;
                 callbacks.PermissionGranted+=_=>{if(!finished&&Array.TrueForAll(permissions,Permission.HasUserAuthorizedPermission)){finished=true;go();}};
-                callbacks.PermissionDenied+=_=>{if(finished||token!=attempt)return;finished=true;if(!host)Native("paired");Raise("error","Разрешение отклонено. Нужен доступ к ближайшим устройствам (Android 12+) или геолокации для поиска (Android 11 и ниже). Сопряжённое устройство можно выбрать из списка.");};
-                callbacks.PermissionDeniedAndDontAskAgain+=_=>{if(finished||token!=attempt)return;finished=true;if(!host)Native("paired");Raise("error","Доступ к Bluetooth запрещён. Разрешите ближайшие устройства в настройках приложения и повторите.");};
+                callbacks.PermissionDenied+=permission=>{
+                    if(finished||token!=attempt)return;finished=true;
+                    if(!host&&(sdk<31||Permission.HasUserAuthorizedPermission("android.permission.BLUETOOTH_CONNECT")))Native("paired");
+                    bool canAskAgain=Permission.ShouldShowRequestPermissionRationale(permission);
+                    Raise("error",canAskAgain?
+                        "Разрешение отклонено. Нужен доступ к ближайшим устройствам (Android 12+) или геолокации для поиска (Android 11 и ниже). Нажмите «Повторить»; сопряжённое устройство можно выбрать из списка.":
+                        "Доступ запрещён. Разрешите ближайшие устройства / Bluetooth (или геолокацию на Android 11 и ниже) в настройках приложения, затем повторите. Доступные сопряжённые устройства показаны в списке.");
+                };
                 Permission.RequestUserPermissions(permissions,callbacks);
             }
 #else

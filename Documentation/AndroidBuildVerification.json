@@ -1,0 +1,20 @@
+{
+  "apk": "Builds/Android/WinterDuel.apk",
+  "bytes": 65163747,
+  "sha256": "71cce260d0b5f9fd93deab94be14dd48d8f68dcbc17fc2fc06c42bbc24f6b4af",
+  "package": "com.winterduel.snowbattle",
+  "version": "0.2.0",
+  "versionCode": 2,
+  "minimumSdk": 25,
+  "targetSdk": 36,
+  "abi": "arm64-v8a",
+  "apkSignatureV2Verified": true,
+  "zipCrcVerified": true,
+  "classicBluetoothClassesPresent": true,
+  "nativeSourceMatches": true,
+  "buildErrors": 0,
+  "buildWarnings": 1,
+  "warning": "Unity recommends optional Android debug symbols for detailed crash reports.",
+  "installedOnDevice": false,
+  "physicalBluetoothTested": false
+}

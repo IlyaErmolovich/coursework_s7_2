@@ -41,7 +41,7 @@ namespace WinterDuel.App
         private HostCommandGate gate=new HostCommandGate();
         private long outgoingSequence,pendingAction;
         private float receivedAt,pingAt,snapshotAt;
-        private bool peerLoaded,leaving;
+        private bool peerLoaded,leaving,connectingDevice,connectionHasError;
         private void Awake()
         {
             if(Instance!=null&&Instance!=this){Destroy(gameObject);return;}
@@ -62,7 +62,7 @@ namespace WinterDuel.App
         public void SelectDevice(string address)
         {
             if(Mode!=SessionMode.Client||Handshake)return;
-            Status="Подключение… Подтвердите сопряжение на обоих телефонах.";transport.Connect(address);
+            connectingDevice=true;connectionHasError=false;Status="Подключение… Подтвердите сопряжение на обоих телефонах.";transport.Connect(address);
         }
         public void Discoverable(){if(Mode==SessionMode.Host&&!Handshake)transport.MakeDiscoverable();}
         public void Cancel()=>Leave("Выберите режим игры");
@@ -76,7 +76,7 @@ namespace WinterDuel.App
         {
             transport.Cancel();Handshake=false;LocalReady=false;PeerReady=false;MatchReady=false;InMatch=false;peerLoaded=false;
             ReplayReady=PeerReplayReady=false;pendingAction=0;Round=0;outgoingSequence=0;sessionId=null;gate=new HostCommandGate();
-            Devices.Clear();DeviceRevision++;match=null;Time.timeScale=1;
+            Devices.Clear();DeviceRevision++;match=null;connectingDevice=connectionHasError=false;Time.timeScale=1;
         }
         public void Leave(string reason)
         {
@@ -94,6 +94,8 @@ namespace WinterDuel.App
         private void OnApplicationQuit(){if(transport!=null)transport.Cancel();}
         private void OnNative(BluetoothEvent e)
         {
+            // A retained adapter receiver must never interrupt an offline/local match.
+            if(!Networked)return;
             switch(e.type)
             {
                 case "device":
@@ -102,13 +104,14 @@ namespace WinterDuel.App
                     if(d==null){d=new DiscoveredDevice{address=e.address};Devices.Add(d);}
                     d.name=e.text;d.paired=e.paired;DeviceRevision++;break;
                 case "connected":
-                    receivedAt=pingAt=Time.unscaledTime;Status="Проверка версии игры…";
+                    connectingDevice=false;receivedAt=pingAt=Time.unscaledTime;Status="Проверка версии игры…";
                     if(Mode==SessionMode.Host){sessionId=Guid.NewGuid().ToString("N");Send(new DuelMessage{type="hello"});}
                     break;
                 case "message":Receive(e.text);break;
                 case "disconnected":Leave(e.text);break;
-                case "error":if(InMatch||Handshake)Leave(e.text);else Status=e.text;break;
-                case "scanDone":case "status":if(!Handshake)Status=e.text;break;
+                case "error":connectionHasError=true;if(InMatch||Handshake)Leave(e.text);else Status=e.text;break;
+                case "scanDone":if(Mode==SessionMode.Client&&!Handshake&&!transport.Connected&&!connectingDevice&&!connectionHasError)Status=e.text;break;
+                case "status":if(!Handshake&&!connectionHasError)Status=e.text;break;
             }
         }
         private long Send(DuelMessage message)

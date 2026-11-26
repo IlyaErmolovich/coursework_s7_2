@@ -21,12 +21,12 @@ namespace WinterDuel.EditorTools
                     locationPathName=Output,target=BuildTarget.Android,options=BuildOptions.Development
                 });
                 var s=report.summary;
-                File.WriteAllText(statusPath,JsonUtility.ToJson(new BuildStatus{status=s.result.ToString(),bytes=s.totalSize,errors=s.totalErrors,warnings=s.totalWarnings,duration=s.totalTime.TotalSeconds},true));
+                File.WriteAllText(statusPath,JsonUtility.ToJson(new BuildStatus{status=s.result.ToString(),bytes=s.totalSize,apkBytes=File.Exists(Output)?new FileInfo(Output).Length:0,errors=s.totalErrors,warnings=s.totalWarnings,duration=s.totalTime.TotalSeconds},true));
                 if(s.result!=BuildResult.Succeeded)Debug.LogError("Winter Duel Android build failed: "+s.result);
             }
             catch(Exception e){File.WriteAllText(statusPath,JsonUtility.ToJson(new BuildStatus{status="Exception",detail=e.ToString()},true));Debug.LogException(e);}
         }
         [Serializable] private sealed class BuildStatus
-        {public string status,detail;public ulong bytes;public int errors,warnings;public double duration;}
+        {public string status,detail;public ulong bytes;public long apkBytes;public int errors,warnings;public double duration;}
     }
 }
