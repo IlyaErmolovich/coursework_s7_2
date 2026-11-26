@@ -10,10 +10,14 @@ namespace WinterDuel.Gameplay
         public Transform throwOrigin;
         public BoxCollider2D hitbox;
         public Vector2 leftFoot, rightFoot;
+        [Header("Optional flat platform limits")]
+        public bool constrainPlacement;
+        public float placementMinX, placementMaxX;
         public Vector2 LaunchOrigin => throwOrigin.position;
         public bool Contains(Vector2 point) => hitbox!=null && hitbox.OverlapPoint(point);
         public void Place(float x)
         {
+            if(constrainPlacement) x=Mathf.Clamp(x,placementMinX,placementMaxX);
             var a=leftFoot;var b=rightFoot;
             if(a.x>b.x){var t=a;a=b;b=t;}
             float angle=0,y=0;

@@ -8,6 +8,25 @@ namespace WinterDuel.Environment
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public sealed class SnowTerrain : MonoBehaviour
     {
+        [System.Serializable]
+        public struct DuelHill
+        {
+            [Range(0, 1)] public float positionBetweenPlayers;
+            [Min(0)] public float height;
+            [Min(1)] public float width;
+        }
+
+        [System.Serializable]
+        public sealed class FixedFieldProfile
+        {
+            public bool enabled;
+            public float leftX, rightX, leftHeight, rightHeight, padHalfWidth, padBlend;
+            public DuelHill[] hills = new DuelHill[0];
+        }
+
+        // Authored through FixedDuelFieldLayout; saved here so mesh and collision share one profile.
+        [HideInInspector] public FixedFieldProfile fieldProfile = new FixedFieldProfile();
+
         [Header("Shape (local units)")]
         [Min(1f)] public float width = 40f;
         public float surfaceHeight = -2.8f;
@@ -55,12 +74,44 @@ namespace WinterDuel.Environment
         /// <summary>Continuous deterministic profile, useful when authoring the shape.</summary>
         public float EvaluateLocalHeight(float x)
         {
+            if (fieldProfile != null && fieldProfile.enabled) return EvaluateFixedField(x);
             float phase = Mathf.Repeat(seed * 0.618034f, 97f);
             // Long waves with unrelated wavelengths avoid repetitive ripples.
             return surfaceHeight + amplitude * (
                 0.64f * Mathf.Sin(x / smoothness * 2f * Mathf.PI + phase) +
                 0.27f * Mathf.Sin(x / (smoothness * 1.79f) * 2f * Mathf.PI + phase * 1.73f) +
                 0.09f * Mathf.Sin(x / (smoothness * 0.63f) * 2f * Mathf.PI + phase * 2.31f));
+        }
+
+        private static float SmoothTransition(float t)
+        {
+            t = Mathf.Clamp01(t);
+            return t * t * t * (t * (t * 6 - 15) + 10);
+        }
+
+        private float EvaluateFixedField(float x)
+        {
+            var p = fieldProfile;
+            float leftEdge = p.leftX + p.padHalfWidth;
+            float rightEdge = p.rightX - p.padHalfWidth;
+            float baseline = Mathf.Lerp(p.leftHeight, p.rightHeight,
+                SmoothTransition(Mathf.InverseLerp(leftEdge, rightEdge, x)));
+            float blend = Mathf.Max(0.1f, p.padBlend);
+            float mask = SmoothTransition((x - leftEdge) / blend) *
+                         SmoothTransition((rightEdge - x) / blend);
+            float hills = 0;
+            for (int i = 0; i < p.hills.Length; i++)
+            {
+                var hill = p.hills[i];
+                float center = Mathf.Lerp(p.leftX, p.rightX, hill.positionBetweenPlayers);
+                float u = (x - center) / Mathf.Max(0.5f, hill.width * 0.5f);
+                if (Mathf.Abs(u) >= 1) continue;
+                // Compact C2 dome: flat at its base, rounded at its crest. Seed adds mild asymmetry.
+                float dome = 1 - u * u;
+                float skew = 0.08f * Mathf.Sin(seed * 0.31f + i * 2.17f);
+                hills += hill.height * dome * dome * dome * (1 + skew * u);
+            }
+            return baseline + mask * hills;
         }
 
         /// <summary>Exact point on the sampled mesh/collider, for future character placement.

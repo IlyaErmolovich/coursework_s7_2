@@ -21,7 +21,7 @@ MonoBehaviour:
   minimumDrag: 28
   maximumDrag: 400
   minimumSpeed: 6
-  maximumSpeed: 24
+  maximumSpeed: 28
   gravity: 9.81
   maximumWind: 1.8
   windSeed: 7341
@@ -32,13 +32,13 @@ MonoBehaviour:
   minimumY: -12
   maximumY: 42
   knockback: 0.55
-  playerLeftLimit: -20
-  playerRightLimit: 28
+  playerLeftLimit: -19.275
+  playerRightLimit: 27.775
   minimumPlayerDistance: 4
   resultDelay: 0.8
   previewDuration: 0.42
   previewDistance: 5.5
-  cameraLeft: -24
-  cameraRight: 24
-  cameraTop: 30
+  cameraLeft: -34
+  cameraRight: 34
+  cameraTop: 40
   cameraSmoothTime: 0.32
