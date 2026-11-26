@@ -29,9 +29,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeEnd: 0.78
-    - _FadeStart: 0.52
+    - _FadeEnd: 0.88
+    - _FadeStart: 0.58
     m_Colors:
-    - _SmokeColor: {r: 0.77, g: 0.69, b: 0.8399999, a: 0.46}
+    - _SmokeColor: {r: 0.77, g: 0.69, b: 0.8399999, a: 0.56}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
