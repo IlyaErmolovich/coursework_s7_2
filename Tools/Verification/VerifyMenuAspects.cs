@@ -40,6 +40,12 @@ public static class VerifyMenuAspects
      var p=camera.WorldToViewportPoint(ImagePoint(fit,point.x,point.y));Check(p.x>=0&&p.x<=1&&p.y>=0&&p.y<=1,"Important illustration landmark cropped");
     }
     var pipe=RectTransformUtility.WorldToScreenPoint(camera,ImagePoint(fit,1492,214));var smoke=RectTransformUtility.WorldToScreenPoint(camera,fit.chimneyEmitter.position);Check(Vector2.Distance(pipe,smoke)<.01f,"Smoke detached from chimney");
+    var composite=camera.GetComponent<MenuSmokeComposite>();composite.RefreshAndRender();
+    Check(!composite.coverageCamera.enabled&&composite.coverageCamera.cullingMask==(1<<fit.chimneyEmitter.gameObject.layer)&&(camera.cullingMask&(1<<fit.chimneyEmitter.gameObject.layer))==0,"Particle mask isolated from main camera");
+    foreach(var corner in new[]{new Vector3(-.5f,-.5f,0),new Vector3(.5f,.5f,0)}){
+     var projected=composite.coverageCamera.WorldToViewportPoint(composite.display.transform.TransformPoint(corner));
+     Check(Vector2.Distance(new Vector2(projected.x,projected.y),new Vector2(corner.x+.5f,corner.y+.5f))<.001f,"Unified smoke projection detached from illustration");
+    }
     output.Add(new{aspect=aspect.x+":"+aspect.y,screen=Screen.width+"x"+Screen.height,cameraAspect=camera.aspect,columnScale=column.column.localScale.x,smokePixelError=Vector2.Distance(pipe,smoke),passed=true});
    }
    return output;

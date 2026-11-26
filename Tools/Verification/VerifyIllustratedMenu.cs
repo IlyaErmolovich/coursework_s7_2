@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using WinterDuel.App;
 using WinterDuel.UI;
+using TMPro;
 public static class VerifyIllustratedMenu
 {
  static int checks;
@@ -20,7 +21,8 @@ public static class VerifyIllustratedMenu
   Check(ui.mainPanel.transform.Find("Local Game")==null,"Local mode removed from product menu");
   foreach(int i in Enumerable.Range(0,3)){
    var b=buttons.Single(x=>x.name==names[i]);Check(b.onClick.GetPersistentEventCount()==1&&b.onClick.GetPersistentTarget(0)==ui&&b.onClick.GetPersistentMethodName(0)==methods[i],"Saved callback "+names[i]);
-   var t=b.GetComponentInChildren<Text>();Check(t.text==labels[i]&&t.font.name=="BalsamiqSans-Bold"&&t.fontSize==58&&t.fontStyle==FontStyle.Bold,"Shared real Bold face and text");
+   var t=b.GetComponentInChildren<TMP_Text>();Check(t.text==labels[i]&&t.font.faceInfo.familyName=="Balsamiq Sans"&&t.font.faceInfo.styleName=="Bold"&&t.fontSize==58,"Shared real Bold face and text");
+   Check(Mathf.Abs(t.fontSharedMaterial.GetFloat("_FaceDilate")-.075f)<.0001f&&!t.fontSharedMaterial.IsKeywordEnabled("UNDERLAY_ON")&&t.fontSharedMaterial.GetFloat("_OutlineWidth")==0,"Slight material stroke without shadow");
    Check(t.text.All(c=>t.font.HasCharacter(c)),"Cyrillic glyphs present");Check(t.preferredWidth<t.rectTransform.rect.width-20,"Label fits without auto-shrinking");
    var hits=new List<RaycastResult>();var pointer=new PointerEventData(EventSystem.current){position=RectTransformUtility.WorldToScreenPoint(null,t.transform.position)};EventSystem.current.RaycastAll(pointer,hits);
    Check(hits.Any(h=>h.gameObject.GetComponentInParent<Button>()==b),"Touch target reachable");

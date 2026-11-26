@@ -1,0 +1,6 @@
+ChimneyPuff-Illustrated.png
+Created using the built-in image_gen tool, transparent background, 2026-11-26.
+Original output copied without pixel editing; Unity imports it at max size 256.
+The shader uses its alpha silhouette; tint is controlled in ChimneyComposite.mat.
+Prompt:
+Use case: stylized-concept. Asset type: single 2D Unity particle texture, NOT a scene or full smoke trail. Make ONE simple flat hand-drawn rounded smoke puff silhouette, almost oval with 3 gently uneven broad rounded lobes merging smoothly into one solid shape. Very pale neutral gray lavender / off-white fill, nearly uniform flat color. Clean, smooth antialiased contour with only a tiny edge softness (1-2 pixels), interior fully opaque. No outlines, no texture or speckle, no shading, no gradients, no blur, no glow, no shadow. Actual transparent alpha background, no checkerboard painted in. Centered isolated puff filling about 80 percent of square with generous transparent margins. No chimney, no sky, no letters, no separate disconnected circles. This will be tinted light gray-lavender by Unity and overlapped into a continuous stylized chimney plume, so keep the silhouette broad and very simple.

@@ -4,7 +4,11 @@ https://raw.githubusercontent.com/google/fonts/main/ofl/balsamiqsans/BalsamiqSan
 https://raw.githubusercontent.com/google/fonts/main/ofl/balsamiqsans/OFL.txt
 Upstream author: https://github.com/balsamiq/balsamiqsans
 Downloaded 2026-11-26. Licensed under SIL Open Font License 1.1 (OFL.txt).
-Unity's TrueType FontImporter creates the dynamic Font asset from this original
-Bold TTF. The font data stays embedded so Cyrillic glyphs are available on Android.
-Main menu labels use Unity UI Text with the Bold face, FontStyle.Bold, a shared
-size of 58 and geometry alignment. Auto-fit is disabled.
+The original Bold TTF is unchanged (OS/2 weight 700, face style Bold).
+Menu buttons use TextMeshProUGUI with BalsamiqSans-Bold-SDF.asset, a static
+1024x1024 SDF atlas baked at 64pt with padding 8 (SDFAA), ASCII 32-126 and
+Cyrillic U+0400-045F: 191 characters, no missing glyphs.
+Shared material Assets/Materials/Menu/BalsamiqSans-Bold-Menu.mat:
+Face Dilate 0.075, Outline 0, Underlay off. No synthetic Bold on top of the
+actual Bold glyphs. Font size 58, no auto-fit. Standard TMP Essential Resources
+supply the SDF shader. Other pre-existing connection labels retain Unity UI Text.
