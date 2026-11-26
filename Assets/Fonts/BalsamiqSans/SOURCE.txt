@@ -1,0 +1,10 @@
+Balsamiq Sans Bold — official Google Fonts distribution
+https://github.com/google/fonts/tree/main/ofl/balsamiqsans
+https://raw.githubusercontent.com/google/fonts/main/ofl/balsamiqsans/BalsamiqSans-Bold.ttf
+https://raw.githubusercontent.com/google/fonts/main/ofl/balsamiqsans/OFL.txt
+Upstream author: https://github.com/balsamiq/balsamiqsans
+Downloaded 2026-11-26. Licensed under SIL Open Font License 1.1 (OFL.txt).
+Unity's TrueType FontImporter creates the dynamic Font asset from this original
+Bold TTF. The font data stays embedded so Cyrillic glyphs are available on Android.
+Main menu labels use Unity UI Text with the Bold face, FontStyle.Bold, a shared
+size of 58 and geometry alignment. Auto-fit is disabled.

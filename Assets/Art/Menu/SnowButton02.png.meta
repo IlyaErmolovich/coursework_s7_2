@@ -1,0 +1,1443 @@
+fileFormatVersion: 2
+guid: f124bc62deecf49129f1a1592bfd2789
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7972181868190608489
+    second: SnowButton02_0
+  - first:
+      213: -2801159243971915744
+    second: SnowButton02_1
+  - first:
+      213: 1280646220118444654
+    second: SnowButton02_2
+  - first:
+      213: 5365740276116416228
+    second: SnowButton02_3
+  - first:
+      213: -9219489603006556727
+    second: SnowButton02_4
+  - first:
+      213: -7784644303231505605
+    second: SnowButton02_5
+  - first:
+      213: 3083129714985203389
+    second: SnowButton02_6
+  - first:
+      213: -4794669406048573214
+    second: SnowButton02_7
+  - first:
+      213: -3577189616526075752
+    second: SnowButton02_8
+  - first:
+      213: 8370945754274109788
+    second: SnowButton02_9
+  - first:
+      213: 5276630497462852028
+    second: SnowButton02_10
+  - first:
+      213: 7615418566140486884
+    second: SnowButton02_11
+  - first:
+      213: -5006230144290864912
+    second: SnowButton02_12
+  - first:
+      213: 4688155637989316952
+    second: SnowButton02_13
+  - first:
+      213: -4220456691965174322
+    second: SnowButton02_14
+  - first:
+      213: 5998396241893294655
+    second: SnowButton02_15
+  - first:
+      213: 4236743195840642960
+    second: SnowButton02_16
+  - first:
+      213: 8420563847890653896
+    second: SnowButton02_17
+  - first:
+      213: -6824854495050237801
+    second: SnowButton02_18
+  - first:
+      213: -2072207563841656639
+    second: SnowButton02_19
+  - first:
+      213: -7276949011037318519
+    second: SnowButton02_20
+  - first:
+      213: -5889237248915547151
+    second: SnowButton02_21
+  - first:
+      213: 7810363386634186569
+    second: SnowButton02_22
+  - first:
+      213: 1086708810564777458
+    second: SnowButton02_23
+  - first:
+      213: 6744139143799812977
+    second: SnowButton02_24
+  - first:
+      213: 2904297352430266902
+    second: SnowButton02_25
+  - first:
+      213: 7641317563095761628
+    second: SnowButton02_26
+  - first:
+      213: 1022362405879143549
+    second: SnowButton02_27
+  - first:
+      213: -802268481930391142
+    second: SnowButton02_28
+  - first:
+      213: -5317375393102162379
+    second: SnowButton02_29
+  - first:
+      213: 6045407594814970704
+    second: SnowButton02_30
+  - first:
+      213: -3804530767628101036
+    second: SnowButton02_31
+  - first:
+      213: -5148265955809421673
+    second: SnowButton02_32
+  - first:
+      213: -1845160506901369832
+    second: SnowButton02_33
+  - first:
+      213: 2103876677208248570
+    second: SnowButton02_34
+  - first:
+      213: 2246269008371519011
+    second: SnowButton02_35
+  - first:
+      213: -6649924435332845116
+    second: SnowButton02_36
+  - first:
+      213: -25354950094751125
+    second: SnowButton02_37
+  - first:
+      213: 6076087919674058297
+    second: SnowButton02_38
+  - first:
+      213: 3842084923178599639
+    second: SnowButton02_39
+  - first:
+      213: -5457190123907630377
+    second: SnowButton02_40
+  - first:
+      213: -4441175490352311145
+    second: SnowButton02_41
+  - first:
+      213: 1508696166105272822
+    second: SnowButton02_42
+  - first:
+      213: 1579471897493903940
+    second: SnowButton02_43
+  - first:
+      213: -7907203561884835743
+    second: SnowButton02_44
+  - first:
+      213: -6603382562873728155
+    second: SnowButton02_45
+  - first:
+      213: -2502333433957171877
+    second: SnowButton02_46
+  - first:
+      213: -885940537091164078
+    second: SnowButton02_47
+  - first:
+      213: -6816332805178166822
+    second: SnowButton02_48
+  - first:
+      213: 3851280212934975474
+    second: SnowButton02_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SnowButton02_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 2157
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96caf42bb21e2ae60800000000000000
+      internalID: 7972181868190608489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 711
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02090cf32884029d0800000000000000
+      internalID: -2801159243971915744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 711
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a4b19b3f4c5c110800000000000000
+      internalID: 1280646220118444654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 711
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e6ecea2a50f67a40800000000000000
+      internalID: 5365740276116416228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_4
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 691
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c513629d0bcd0080800000000000000
+      internalID: -9219489603006556727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_5
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 715
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b2e13404367f390800000000000000
+      internalID: -7784644303231505605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_6
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 705
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6f422042a79ca20800000000000000
+      internalID: 3083129714985203389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_7
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 689
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8aa051499e57db0800000000000000
+      internalID: -4794669406048573214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_8
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 689
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8985fbc1ff44b5ec0800000000000000
+      internalID: -3577189616526075752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_9
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 66
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c599295ffc29b2470800000000000000
+      internalID: 8370945754274109788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_10
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 33
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9144c0b7b5a3940800000000000000
+      internalID: 5276630497462852028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_11
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 40
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4e7b276d66fa960800000000000000
+      internalID: 7615418566140486884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_12
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 40
+        width: 49
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0c0b9353c468ab0800000000000000
+      internalID: -5006230144290864912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_13
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 40
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859191eb6bcaf0140800000000000000
+      internalID: 4688155637989316952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_14
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 42
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdde75effced65c0800000000000000
+      internalID: -4220456691965174322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_15
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 31
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f328614e9959e3350800000000000000
+      internalID: 5998396241893294655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_16
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 3
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f72a84d7febca30800000000000000
+      internalID: 4236743195840642960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_17
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 38
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2d402a43adbd470800000000000000
+      internalID: 8420563847890653896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_18
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 40
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7987dc21ffe3941a0800000000000000
+      internalID: -6824854495050237801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_19
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 31
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c82750233a0e33e0800000000000000
+      internalID: -2072207563841656639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_20
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 42
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9829d7ced65130b90800000000000000
+      internalID: -7276949011037318519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_21
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 24
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbd364bce9354ea0800000000000000
+      internalID: -5889237248915547151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_22
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 21
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f2c0b7e1cf36c60800000000000000
+      internalID: 7810363386634186569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_23
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 24
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f53004d7e3c41f00800000000000000
+      internalID: 1086708810564777458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_24
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 26
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173befdb1def79d50800000000000000
+      internalID: 6744139143799812977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_25
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 24
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61aa6bded032e4820800000000000000
+      internalID: 2904297352430266902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_26
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 3
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2c64496d96b0a60800000000000000
+      internalID: 7641317563095761628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_27
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cd3220139203e00800000000000000
+      internalID: 1022362405879143549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_28
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 8
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a911c08f015cdd4f0800000000000000
+      internalID: -802268481930391142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_29
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 6
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5361ebca043e436b0800000000000000
+      internalID: -5317375393102162379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_30
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 3
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b15637d2a95e350800000000000000
+      internalID: 6045407594814970704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_31
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 0
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a9b729c67933bc0800000000000000
+      internalID: -3804530767628101036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_32
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7961ebec36fad88b0800000000000000
+      internalID: -5148265955809421673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_33
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 1
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c60988b4ca466e0800000000000000
+      internalID: -1845160506901369832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_34
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 0
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af01a3ce0b8723d10800000000000000
+      internalID: 2103876677208248570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_35
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 0
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e04f903c95c2f10800000000000000
+      internalID: 2246269008371519011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_36
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 0
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1bbc875f8b6b3a0800000000000000
+      internalID: -6649924435332845116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_37
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 0
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6afd46aecbe5aff0800000000000000
+      internalID: -25354950094751125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_38
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 1
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936e63c35c9925450800000000000000
+      internalID: 6076087919674058297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_39
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 3
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4c1f2a1e3d15530800000000000000
+      internalID: 3842084923178599639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_40
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 5
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da37b8ee7a2444b0800000000000000
+      internalID: -5457190123907630377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_41
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 6
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79411600c66cd52c0800000000000000
+      internalID: -4441175490352311145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_42
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 10
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f1d2be6b27ffe410800000000000000
+      internalID: 1508696166105272822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_43
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a16d682596be510800000000000000
+      internalID: 1579471897493903940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_44
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160a62f2148f34290800000000000000
+      internalID: -7907203561884835743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_45
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 4
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56327e79b821c54a0800000000000000
+      internalID: -6603382562873728155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_46
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 3
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d366feffce54dd0800000000000000
+      internalID: -2502333433957171877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_47
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 1
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258ff8286c184b3f0800000000000000
+      internalID: -885940537091164078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_48
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 0
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1738c9d658761a0800000000000000
+      internalID: -6816332805178166822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SnowButton02_49
+      rect:
+        serializedVersion: 2
+        x: 2012
+        y: 0
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffda7ed2fe727530800000000000000
+      internalID: 3851280212934975474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SnowButton02_0: 7972181868190608489
+      SnowButton02_1: -2801159243971915744
+      SnowButton02_10: 5276630497462852028
+      SnowButton02_11: 7615418566140486884
+      SnowButton02_12: -5006230144290864912
+      SnowButton02_13: 4688155637989316952
+      SnowButton02_14: -4220456691965174322
+      SnowButton02_15: 5998396241893294655
+      SnowButton02_16: 4236743195840642960
+      SnowButton02_17: 8420563847890653896
+      SnowButton02_18: -6824854495050237801
+      SnowButton02_19: -2072207563841656639
+      SnowButton02_2: 1280646220118444654
+      SnowButton02_20: -7276949011037318519
+      SnowButton02_21: -5889237248915547151
+      SnowButton02_22: 7810363386634186569
+      SnowButton02_23: 1086708810564777458
+      SnowButton02_24: 6744139143799812977
+      SnowButton02_25: 2904297352430266902
+      SnowButton02_26: 7641317563095761628
+      SnowButton02_27: 1022362405879143549
+      SnowButton02_28: -802268481930391142
+      SnowButton02_29: -5317375393102162379
+      SnowButton02_3: 5365740276116416228
+      SnowButton02_30: 6045407594814970704
+      SnowButton02_31: -3804530767628101036
+      SnowButton02_32: -5148265955809421673
+      SnowButton02_33: -1845160506901369832
+      SnowButton02_34: 2103876677208248570
+      SnowButton02_35: 2246269008371519011
+      SnowButton02_36: -6649924435332845116
+      SnowButton02_37: -25354950094751125
+      SnowButton02_38: 6076087919674058297
+      SnowButton02_39: 3842084923178599639
+      SnowButton02_4: -9219489603006556727
+      SnowButton02_40: -5457190123907630377
+      SnowButton02_41: -4441175490352311145
+      SnowButton02_42: 1508696166105272822
+      SnowButton02_43: 1579471897493903940
+      SnowButton02_44: -7907203561884835743
+      SnowButton02_45: -6603382562873728155
+      SnowButton02_46: -2502333433957171877
+      SnowButton02_47: -885940537091164078
+      SnowButton02_48: -6816332805178166822
+      SnowButton02_49: 3851280212934975474
+      SnowButton02_5: -7784644303231505605
+      SnowButton02_6: 3083129714985203389
+      SnowButton02_7: -4794669406048573214
+      SnowButton02_8: -3577189616526075752
+      SnowButton02_9: 8370945754274109788
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

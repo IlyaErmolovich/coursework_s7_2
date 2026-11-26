@@ -24,7 +24,7 @@ namespace WinterDuel.App
         {
             var s=Session;if(s==null)return;
             mainPanel.SetActive(s.Page==MenuPage.Main);connectionPanel.SetActive(s.Page==MenuPage.Connection);lobbyPanel.SetActive(s.Page==MenuPage.Lobby);
-            notice.text=s.Status;connectionTitle.text=s.Mode==SessionMode.Host?"Ожидание второго игрока":"Подключиться к игре";connectionStatus.text=s.Status;
+            notice.text=s.Status;notice.gameObject.SetActive(s.Page==MenuPage.Main&&!string.IsNullOrEmpty(s.Status)&&s.Status!="Выберите режим игры");connectionTitle.text=s.Mode==SessionMode.Host?"Ожидание второго игрока":"Подключиться к игре";connectionStatus.text=s.Status;
             visibilityButton.gameObject.SetActive(s.Mode==SessionMode.Host);
             deviceContent.parent.parent.gameObject.SetActive(s.Mode==SessionMode.Client);
             readyLabel.text=s.LocalReady?"Отменить готовность":"Я готов";
