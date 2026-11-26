@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace WinterDuel.UI
 {
-    /// <summary>Unions particle masks before applying opacity, avoiding overlapping circular bands.</summary>
+    /// <summary>Composites light particle coverage before applying the shared lavender tint.</summary>
     [ExecuteAlways, DefaultExecutionOrder(200), DisallowMultipleComponent]
     public sealed class MenuSmokeComposite : MonoBehaviour
     {

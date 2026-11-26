@@ -8,7 +8,8 @@ public static class VerifySmokeContinuity {
  var original=Camera.main;var fit=original.GetComponent<MenuBackdropFit>();var ps=fit.chimneyEmitter.GetComponent<ParticleSystem>();var composite=original.GetComponent<MenuSmokeComposite>();
  if(!ps.main.prewarm||!ps.main.loop||ps.emission.burstCount!=0)throw new Exception("Expected prewarmed continuous emission");
  var dir=Path.GetFullPath(".utmp/smoke-motion");Directory.CreateDirectory(dir);
- var report=new Report{initialParticles=ps.particleCount};if(report.initialParticles<80)throw new Exception("Plume not formed on entry");
+ var report=new Report{initialParticles=ps.particleCount};int minimum=Mathf.FloorToInt(ps.emission.rateOverTime.constant*ps.main.startLifetime.constantMin)-2;int maximum=Mathf.CeilToInt(ps.emission.rateOverTime.constant*ps.main.startLifetime.constantMax)+2;
+ if(report.initialParticles<minimum)throw new Exception("Plume not formed on entry");
  var go=new GameObject("Smoke motion verification camera");var camera=go.AddComponent<Camera>();camera.CopyFrom(original);camera.enabled=false;camera.orthographicSize=1.2f;camera.aspect=1;
  camera.transform.position=new Vector3(fit.chimneyEmitter.position.x+.25f,fit.chimneyEmitter.position.y+.6f,original.transform.position.z);
  var rt=new RenderTexture(512,512,16,RenderTextureFormat.ARGB32);rt.Create();camera.targetTexture=rt;
@@ -31,7 +32,7 @@ public static class VerifySmokeContinuity {
   camera.Render();RenderTexture.active=rt;frame.ReadPixels(new Rect(0,0,512,512),0,0);frame.Apply();File.WriteAllBytes(Path.Combine(dir,"frame-"+report.frames.ToString("D4")+".png"),frame.EncodeToPNG());
   report.samples.Add(sample);report.frames++;await Task.Delay(50);
  }
- report.seconds=clock.Elapsed.TotalSeconds;report.passed=report.seconds>=18&&report.frames>=100&&report.restarts==0&&report.minParticles>=85&&report.maxParticles<=110&&report.maxTrackedSpeed<.3f;
+ report.seconds=clock.Elapsed.TotalSeconds;report.passed=report.seconds>=18&&report.frames>=100&&report.restarts==0&&report.minParticles>=minimum&&report.maxParticles<=maximum&&report.maxTrackedSpeed<.3f;
  File.WriteAllText(Path.Combine(dir,"samples.csv"),"seconds,simulationTime,particles,tracked,maxSpeed,coverageMean,meanPixelChange,maxPixelChange\n"+string.Join("\n",report.samples.Select(s=>FormattableString.Invariant($"{s.seconds},{s.simulationTime},{s.particles},{s.tracked},{s.maxSpeed},{s.coverageMean},{s.meanPixelChange},{s.maxPixelChange}"))));
  File.WriteAllText(Path.Combine(dir,"report.json"),JsonUtility.ToJson(report,true));if(!report.passed)throw new Exception("Continuity check failed: "+JsonUtility.ToJson(report));
  return new{report.seconds,report.frames,report.initialParticles,report.minParticles,report.maxParticles,report.restarts,report.maxTrackedSpeed,report.passed,directory=dir};

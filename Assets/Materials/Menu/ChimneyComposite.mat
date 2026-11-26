@@ -32,6 +32,6 @@ Material:
     - _FadeEnd: 0.78
     - _FadeStart: 0.52
     m_Colors:
-    - _SmokeColor: {r: 0.77, g: 0.69, b: 0.84, a: 0.6}
+    - _SmokeColor: {r: 0.77, g: 0.69, b: 0.8399999, a: 0.46}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

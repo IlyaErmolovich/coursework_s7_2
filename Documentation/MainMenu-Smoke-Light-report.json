@@ -1,0 +1,10 @@
+{
+    "seconds": 18.0978979,
+    "frames": 183,
+    "initialParticles": 20,
+    "minParticles": 19,
+    "maxParticles": 22,
+    "restarts": 0,
+    "maxTrackedSpeed": 0.20493890345096589,
+    "passed": true
+}

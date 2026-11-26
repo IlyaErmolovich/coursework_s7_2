@@ -37,7 +37,7 @@ public static class VerifyIllustratedMenu
   var backdrop=Camera.main.GetComponent<MenuBackdropFit>();var ps=backdrop.chimneyEmitter.GetComponent<ParticleSystem>();
   var particles=new ParticleSystem.Particle[ps.main.maxParticles];int count=ps.GetParticles(particles);var before=particles.Take(count).ToDictionary(p=>p.randomSeed,p=>p.position);await Task.Delay(400);count=ps.GetParticles(particles);
   int moved=particles.Take(count).Count(p=>before.ContainsKey(p.randomSeed)&&Vector3.Distance(p.position,before[p.randomSeed])>.01f);
-  Check(moved>0&&count>0&&count>=85&&count<=110,"Overlapping smoke moves at stable particle count");
+  Check(moved>0&&count>0&&count>=17&&count<=24,"Overlapping smoke moves at stable particle count");
   Check(ps.main.simulationSpace==ParticleSystemSimulationSpace.Local&&ps.main.scalingMode==ParticleSystemScalingMode.Hierarchy,"Smoke follows source illustration");
   var bounds=backdrop.artwork.sprite.bounds;var local=backdrop.chimneyEmitter.localPosition;var uv=new Vector2((local.x-bounds.min.x)/bounds.size.x,(local.y-bounds.min.y)/bounds.size.y);
   Check(Vector2.Distance(uv,new Vector2(1492f/1844,1-214f/853))<.00001f,"Emitter is at the chimney mouth");

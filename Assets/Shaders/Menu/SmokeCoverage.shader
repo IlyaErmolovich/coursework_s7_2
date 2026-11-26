@@ -4,8 +4,7 @@ Shader "Winter Duel/Menu Smoke Coverage"
  SubShader {
   Tags { "Queue"="Transparent" "RenderType"="Transparent" "RenderPipeline"="UniversalPipeline" }
   Cull Off ZWrite Off ZTest Always
-  Blend One One
-  BlendOp Max
+  Blend One OneMinusSrcAlpha
   ColorMask A
   Pass {
    Tags { "LightMode"="Universal2D" }
