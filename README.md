@@ -32,7 +32,7 @@ U+0400–045F, 191 символ в атласе 1024×1024. Размер 58, ц�
 | Main Menu Canvas / Safe Area / Main Menu / Menu Column | Логотип, три Button и их отдельные Label; размеры/отступы в RectTransform |
 | Main Menu Canvas / MenuColumnFit | Равномерное уменьшение левой колонки до 0.9 на 16:9; на 13:6 и 20:9 масштаб 1, привязка к ScreenSafeArea |
 | Menu Camera / MenuBackdropFit | Uniform cover фона, без растяжения; Chimney UV — привязка к трубе в координатах исходного изображения |
-| Menu Camera / Winter Illustration / Chimney Smoke | ParticleSystem: 5 частиц/с, жизнь 5.2 с, фиксированный seed 20261126, плавный изгиб Velocity over Lifetime и расширение Size over Lifetime, без шума |
+| Menu Camera / Winter Illustration / Chimney Smoke | ParticleSystem: 14 частиц/с, жизнь 6.8–7.2 с, фиксированный seed 20261126, медленный подъём 0.14 и боковой снос 0.018–0.065 через Velocity over Lifetime и расширение Size over Lifetime, без шума |
 | Assets/Prefabs/App/MenuScenery.prefab | Сохранённые камера, фон, система частиц и все ссылки между ними |
 | Assets/Prefabs/App/MainMenuCanvas.prefab | Редактируемое меню и прежние панели подключения/готовности; кнопки связаны с существующим MainMenuController |
 
@@ -45,10 +45,27 @@ SOURCE.txt рядом). `MenuSmokeComposite` объединяет маски п�
 только синхронизирует проекцию и рисует маску. В ChimneyComposite.mat доступны
 Smoke Color/Opacity (alpha 0.60), Tip Fade Start=0.52 и End=0.78: растворение
 только наверху. Скорость, изгиб и ширина — в существующей системе частиц.
+Непрерывная эмиссия без Burst, Prewarm и Play On Awake формируют шлейф уже при
+открытии. Alpha over Lifetime: 0 → 0.95 → 0.95 → 0.5 → 0; размер плавно растёт
+0.14 → 0.56, без скачков и случайного разброса направления. Система использует
+Unscaled Time, Always Simulate и не перезапускается кодом меню. Прежние резкие
+изменения контура возникали при появлении и удалении непрозрачных частиц;
+пять клубов в секунду недостаточно скрывали эти переходы.
 Заставка/кнопки не создаются кодом при запуске.
 MainMenuController скрывает только нейтральную подпись «Выберите режим игры»;
 сообщения о разрыве связи по-прежнему появляются. Экраны ожидания/подключения
 используют прежние реальные функции Bluetooth, а не новые заглушки.
+
+Движение дополнительно проверено `VerifySmokeContinuity.cs` в течение 18.007 с
+реальной работы Play Mode: 136 кадров, 96–100 живых частиц, без перезапусков,
+максимальная измеренная скорость 0.155 единицы/с. Между выборками сохранялось
+не менее 92 тех же живых частиц; полный сброс шлейфа отсутствовал и при переходе
+через границы Duration. Проверка не вызывает Play/Stop/Simulate: отслеживает
+положение по возрасту частиц, чтобы не путать новые частицы с повторно
+использованными seed и не считать штатный цикл Duration перезапуском.
+[18-секундная запись крупным планом](Documentation/MainMenu-Smoke-Motion-18s.mp4),
+[отчёт](Documentation/MainMenu-Smoke-Motion-report.json) и
+[покадровые измерения](Documentation/MainMenu-Smoke-Motion-samples.csv).
 
 Проверено после сохранения и повторного открытия: 39 проверок Play Mode
 (`Tools/Verification/VerifyIllustratedMenu.cs`), включая русские подписи,
